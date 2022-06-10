@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다안나와</title>
+</head>
+<body>
+    <!-- shoping list  -->
+    <div class="shoping-list">
+        <div class="shoping-list-header">
+            <div class="shoping-list-header-title">
+                <h1>쇼핑리스트</h1>
+            </div>
+            <div style="display: flex;">
+                <form action="/new_order/{{product.id}}" method="post">
+                <div>
+                    {% for product in products %}
+                        <div class="shoping-list-header-title">
+                            <h4>{{ product.title }}</h4>
+                            <img src="{{product.img}}" alt="">
+                        </div>
+                        <div style="color:blueviolet; font-weight:bold;">재고: {{ product.stock }}</div>
+                        <button>주문하기</button>
+                    {% endfor %}
+                </div>
+                </form>
+            </div>
+</body>
+</html>
